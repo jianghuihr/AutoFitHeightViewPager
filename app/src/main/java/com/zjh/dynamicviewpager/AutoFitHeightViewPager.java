@@ -42,10 +42,15 @@ public class AutoFitHeightViewPager extends ViewPager {
         if (listener != null && isMeasureCallbackAllow) {
             listener.onHeightChange(mCurrentPosition, mCurrentView.getMeasuredHeight());
             isMeasureCallbackAllow = false;
-
         }
     }
 
+    /**
+     * 测量页面的高度
+     *
+     * @param position    页面位置
+     * @param currentView
+     */
     public void measureCurrentView(int position, View currentView) {
         mCurrentPosition = position;
         mCurrentView = currentView;
@@ -53,6 +58,12 @@ public class AutoFitHeightViewPager extends ViewPager {
         isMeasureCallbackAllow = true;
     }
 
+    /**
+     * 测量页面的高度
+     *
+     * @param position    页面位置
+     * @param currentFragment
+     */
     public void measureCurrentView(int position, Fragment currentFragment) {
         mCurrentPosition = position;
         mCurrentView = currentFragment.getView();
